@@ -43,3 +43,8 @@ function Hero(name = 'Hero'){
     this.damage = 5,
     this.experience = 0
   }
+
+//   Return the type of the sum of the two arguments
+function typeOfSum(a, b) {
+    return typeof (a + b)
+  }
