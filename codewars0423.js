@@ -7,23 +7,38 @@
 
 // You may use any valid syntax you like; however, it is highly recommended that you complete this Kata using ES6 syntax and features.
 
-let Person = class {
-  constructor(firstName = "John", lastName = "Doe", age = 0, gender = "Male"){
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.age = age;
-  this.gender = gender;
-  }
-
-
-
-  greetExtraTerrestrials(raceName) {
-    return "Welcome to planet Earth" + raceName  
+class Person {
+    constructor(firstName = "John", lastName = "Doe", age = 0, gender = "Male"){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.gender = gender;
+    }
   
+  
+    static greetExtraTerrestrials(raceName) {
+      return "Welcome to Planet Earth " + raceName  
+    }
+    sayFullName() { 
+      return this.firstName + " " + this.lastName
+    }
+      
   }
-  sayFullName() { 
-    return this.firstName + " " + this.lastName
+
+//   After calling the function findSum() with any number of non-negative integer arguments, it should return the sum of all those arguments. If no arguments are given, the function should return 0, if negative arguments are given, it should return -1.
+// Example
+
+// findSum(1,2,3,4); // returns 10 
+// findSum(1,-2);    // returns -1 
+// findSum();        // returns 0 
+
+function findSum(){
+    let sum = 0
+    for (let i = 0; i < arguments.length; i++)
+      if (arguments[i] < 0){
+        return -1
+      }else  sum += +arguments[i]
+    return sum
   }
-    
-}
+
 
