@@ -42,3 +42,32 @@ function findSum(){
   }
 
 
+//   If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+//   Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in. Additionally, if the number is negative, return 0 (for languages that do have them).
+  
+//   Note: If the number is a multiple of both 3 and 5, only count it once.
+
+function solution(number){
+    let mults = []
+    if (number < 0){
+      return 0
+    }
+    for(let i = 0; i < number; i++){
+     if (i % 3 == 0 || i % 5 == 0) {
+       mults.push(i)
+        }
+      }return mults.reduce((acc, el) => acc + el, 0)
+    }
+
+    // Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+    // Example
+    
+    // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+    
+    // The returned format must be correct in order to complete this challenge.
+    // Don't forget the space after the closing parentheses!
+    
+    function createPhoneNumber(n){
+        return `\(${n[0]}${n[1]}${n[2]}) ${n[3]}${n[4]}${n[5]}-${n[6]}${n[7]}${n[8]}${n[9]}`
+      }
