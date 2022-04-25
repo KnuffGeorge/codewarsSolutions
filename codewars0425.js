@@ -45,4 +45,39 @@ function calculator(a,b,sign){
 function addLength(str) {
     return str.split(' ').map(el => el + " " + el.length)
     }
+  
     
+    // An AI has infected a text with a character!!
+
+    // This text is now fully mutated to this character.
+    
+    // If the text or the character are empty, return an empty string.
+    // There will never be a case when both are empty as nothing is going on!!
+    
+    // Note: The character is a string of length 1 or an empty string.
+    // Example
+    
+    // text before = "abc"
+    // character   = "z"
+    // text after  = "zzz"
+    
+    
+    function contamination(text, char){
+        if (!text || !char){
+          return ""
+        }else return text.split('').map(el => el = char).join('')
+      }
+
+//       It is easy to join two strings together like this string1 + string2.
+
+// Another way to get the desired result would be with string1.concat(string2)
+
+// ES6 has introduced another way of joining strings. Your task is to find out what this is and write a function that will add two strings together, there must be a space between the two strings.
+
+// + , .concat() & .join() will not be allowed in this exercise. I have also removed some other methods that can be used to cheat!
+
+// If one of the arguments is a number your code must coerce it into being a string.
+
+function joinStrings(string1, string2){
+    return `${string1} ${string2}`
+ }
