@@ -65,3 +65,69 @@ function bigToSmall(arr){
   }
     return change.trim()
   }
+
+//   In this kata, we will make a function to test whether a period is late.
+
+// Our function will take three parameters:
+
+// last - The Date object with the date of the last period
+
+// today - The Date object with the date of the check
+
+// cycleLength - Integer representing the length of the cycle in days
+
+// Return true if the number of days passed from last to today is greater than cycleLength. Otherwise, return false.
+
+function periodIsLate(last, today, cycleLength){
+    let timePassed = today.getTime() - last.getTime()
+    let daysPassed = timePassed / (1000*60*60*24)
+    
+    console.log(timePassed)
+    console.log(cycleLength)
+    
+    if (daysPassed > cycleLength){
+      return true
+    }else{
+      return false;
+    }
+    }
+
+    // The Collatz conjecture (also known as 3n+1 conjecture) is a conjecture that applying the following algorithm to any number we will always eventually reach one:
+
+    // [This is writen in pseudocode]
+    // if(number is even) number = number / 2
+    // if(number is odd) number = 3*number + 1
+    
+    // #Task
+    
+    // Your task is to make a function hotpo that takes a positive n as input and returns the number of times you need to perform this algorithm to get n = 1.
+    
+    // #Examples
+    
+    // hotpo(1) returns 0
+    // (1 is already 1)
+    
+    // hotpo(5) returns 5
+    // 5 -> 16 -> 8 -> 4 -> 2 -> 1
+    
+    // hotpo(6) returns 8
+    // 6 -> 3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+    
+    // hotpo(23) returns 15
+    // 23 -> 70 -> 35 -> 106 -> 53 -> 160 -> 80 -> 40 -> 20 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+
+    var hotpo = function(n){
+        let times = 0
+        if(n == 0 || n == 1){
+          return 0
+       }while (n != 1){
+          if (n % 2 == 0){
+            n = n/2
+            times++
+       }else if (n % 2 != 0){
+            n = n*3 + 1
+            times++
+        }
+    }  return times
+    }
+    
