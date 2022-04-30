@@ -59,3 +59,51 @@ class Guesser {
     function DNAtoRNA(dna) {
         return dna.split('').map(x => x === "T" ? x = "U" : x = x).join('') 
        }
+
+    //    Let's play! You have to return which player won! In case of a draw return Draw!.
+
+    //    Examples:
+       
+    //    rps('scissors','paper') // Player 1 won!
+    //    rps('scissors','rock') // Player 2 won!
+    //    rps('paper','paper') // Draw!
+
+    const rps = (p1, p2) => {
+        const p1win = "Player 1 won!"
+        const p2win = "Player 2 won!"
+        const draw = "Draw!"
+        let winner = ""
+        
+        if (p1 === 'rock'){
+              if (p2 === 'rock'){
+            winner = draw
+          }else if(p2 === 'paper'){
+            winner = p2win
+          }else if(p2 === 'scissors'){
+            winner = p1win
+          }
+        }
+      
+      else if (p1 === 'paper'){
+          if (p2 === 'rock'){
+            return p1win
+          }else if(p2 === 'paper'){
+            return draw
+          }else if(p2 === 'scissors'){
+            return p2win
+          }
+        }
+        
+        else if (p1 === 'scissors'){
+          switch (p2){
+            case 'rock': 
+            return p2win;
+            case 'paper':
+            return p1win
+            case 'scissors':
+            return draw
+        }
+      }
+      return winner 
+      };
+       
