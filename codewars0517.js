@@ -14,3 +14,12 @@ function XO(str) {
     let arr = str.split('')
     return arr.filter(x => x.toLowerCase() == "x").length === arr.filter(x => x.toLowerCase() == "o").length
  }
+
+//  Simple, given a string of words, return the length of the shortest word(s).
+
+// String will never be empty and you do not need to account for different data types.
+
+function findShort(s){
+    let arr = s.split(' ').map(x => x.length)
+    return Math.min(...arr)
+  }
