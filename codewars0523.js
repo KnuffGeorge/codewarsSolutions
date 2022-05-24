@@ -34,3 +34,23 @@ function stray(numbers) {
         let score = array2.map((x,i) => x === array1[i] ? 4 : !x ? 0 :-1).reduce((ac,el) => ac + el, 0)
         return Math.max(score, 0)
       }   
+
+    //   In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+    //   If anything in the text isn't a letter, ignore it and don't return it.
+      
+    //   "a" = 1, "b" = 2, etc.
+    //   Example
+      
+    //   alphabetPosition("The sunset sets at twelve o' clock.")
+      
+    //   Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string ) 
+    
+    function alphabetPosition(text) {
+        let testText = text.toLowerCase().split('').filter(x => x.charCodeAt() > 96 && x.charCodeAt() < 123).join('') 
+        let answer = ""
+        for (let i = 0; i < testText.length; i++){
+          answer += testText.charCodeAt(i) - 96 + ' ' 
+        }
+        return answer.slice(0,-1)
+        }
