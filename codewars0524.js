@@ -15,3 +15,24 @@ var capitals = function (word) {
 var countBits = function(n) {
     return +n.toString(2).split('').reduce((ac,el) => ac + +el, 0)
   };
+
+//   Task
+
+// You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+// Examples
+
+// [7, 1]  =>  [1, 7]
+// [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+// [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+function sortArray(array) {
+let oddCount = 0
+let oddsSorted = array.map(x=> Math.abs(x) % 2 === 1 ? x = x : x = null).filter(x=> x != null).sort((a,b) => a-b)
+let evens = array.map(x=> Math.abs(x)% 2 === 0 ? x = x : x = null)
+for(let i = 0; i < evens.length; i++){
+  if(evens[i] == null){
+    evens[i] = oddsSorted[oddCount]
+    oddCount++
+  }
+}
+return evens
+}
