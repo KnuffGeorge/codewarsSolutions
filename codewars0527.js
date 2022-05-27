@@ -63,3 +63,17 @@ function alphabetWar(fight){
     function predictAge(age1,age2,age3,age4,age5,age6,age7,age8){
         return Math.floor(Math.sqrt([...arguments].reduce((ac,el) => ac + (el * el), 0)) / 2)
       }
+
+//       If　a = 1, b = 2, c = 3 ... z = 26
+
+// Then l + o + v + e = 54
+
+// and f + r + i + e + n + d + s + h + i + p = 108
+
+// So friendship is twice stronger than love :-)
+
+// The input will always be in lowercase and never be empty.
+
+function wordsToMarks(string){
+    return [...string].reduce((ac,el)=> ac + el.charCodeAt(0) - 96, 0)
+  }
