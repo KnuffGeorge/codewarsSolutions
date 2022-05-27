@@ -58,3 +58,23 @@ function flattenAndSort(array) {
     array.forEach(x => x.forEach(x => answer.push(x)))
     return answer.sort((a,b)=> a-b);
   }
+
+//   Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+// Examples
+
+// "the-stealth-warrior" gets converted to "theStealthWarrior"
+// "The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+
+
+  function toCamelCase(str){
+    let answer = ''
+    str ? answer += str[0] : null
+    for (let i = 1; i < str.length; i++){
+      if  (str[i-1] == '-' || str[i-1] == '_'){
+        answer += str[i].toUpperCase()
+      }else{
+        answer += str[i]
+      }
+    }return answer.split('').filter(x=> x!= '-' && x != "_").join('')
+    }
+      
