@@ -30,3 +30,12 @@ function rowWeights(array){
     let teamTwo = array.reduce((ac,el,ind) => ind % 2 === 1 ? ac + el : ac,0)
     return [teamOne, teamTwo]
   }
+
+//   Write a function named repeater() that takes two arguments (a string and a number), and returns a new string where the input string is repeated that many times.
+// Example: (Input1, Input2 --> Output)
+
+// "a", 5 --> "aaaaa"
+
+function repeater(string, n){
+    return string.repeat(n)
+  }
