@@ -90,3 +90,12 @@ function wordsToMarks(string){
 function largestPairSum (numbers) {
     return numbers.sort((a,b)=> b-a).reduce((ac,el,ind)=> ind < 2 ? ac + el : ac,0)
   }
+
+//   Find the number with the most digits.
+
+// If two numbers in the argument array have the same number of digits, return the first one in the array.
+
+function findLongest(array){
+    let map = array.map(x=> x.toString().length)
+    return array[map.indexOf(Math.max(...map))]
+  }
