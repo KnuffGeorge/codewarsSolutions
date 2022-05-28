@@ -52,3 +52,9 @@ function inArray(array1,array2){
     array1.forEach(x=> test.includes(x) ? answer.push(x) : null)
     return answer.sort()
   }
+
+  //Filter an array for only even numbers
+
+  function getEvenNumbers(numbersArray){
+    return numbersArray.filter(x => x%2 === 0)
+  }
