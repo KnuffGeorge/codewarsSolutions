@@ -24,4 +24,21 @@ function addLetters(...letters) {
     return sum ? String.fromCharCode(sum + 96) : 'z'
   }
 
-  
+ 
+//   You will be given a number and you will need to return it as a string in Expanded Form. For example:
+
+// expandedForm(12); // Should return '10 + 2'
+// expandedForm(42); // Should return '40 + 2'
+// expandedForm(70304); // Should return '70000 + 300 + 4'
+
+// NOTE: All numbers will be whole numbers greater than 0.
+
+  function expandedForm(num) {
+    let string = num.toString()
+    let answer = ""
+    for(let i = 0; i <= string.length; i++){
+     if (+string[i] > 0){
+       answer += string[i] * 10 ** (string.length - (i+1)) + " + "
+  }
+  } return answer.slice(0,-3)
+  }  
