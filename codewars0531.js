@@ -42,3 +42,12 @@ function addLetters(...letters) {
   }
   } return answer.slice(0,-3)
   }  
+
+
+//   Find the sum of the odd numbers within an array, after cubing the initial integers. The function should return undefined if any of the values aren't numbers.
+
+function cubeOdd(arr) {
+    let cubed = arr.map(x=> x ** 3)
+    if (cubed.includes(NaN)) {return undefined}
+    return cubed.reduce((ac,el)=> Math.abs(el) % 2 === 1 ? ac + el : ac + 0 , 0);
+    }
