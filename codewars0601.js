@@ -46,3 +46,11 @@ function gps(s, x) {
     x.forEach((el,i)=> (3600 * (el - x[i-1])) / s > maxSpeed ? maxSpeed = 3600 * (el - x[i-1]) / s : maxSpeed = maxSpeed) 
     return maxSpeed 
       }
+
+//       Write a small function that returns the values of an array that are not odd.
+
+// All values in the array will be integers. Return the good values in the order they are given.
+
+function noOdds( values ){
+  return values.filter(x=> x % 2 === 0)
+}
