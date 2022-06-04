@@ -16,3 +16,23 @@ function solution(str){
     }
     return answer
   }
+
+
+//   Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+// Examples
+
+// pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+// pigIt('Hello world !');     // elloHay orldway !
+
+function pigIt(str){
+    let arr = str.split(' ')
+    return arr.map(x => punctuationCheck(x) ? x.slice(1) + x.slice(0,1) + "ay" : x =x).join(' ')
+    
+  function punctuationCheck(word){
+      if (word.charCodeAt(0) < 65 || word.charCodeAt(0) > 122){
+        return false
+      }else{
+        return true
+      }
+    }
+  }
