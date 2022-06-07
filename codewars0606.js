@@ -11,3 +11,42 @@
 function toNumberArray(stringarray){
     return stringarray.map(x => +x)
   }
+
+//   Input/Output
+
+//   [input] integer upSpeed
+
+//   A positive integer representing the daily growth.
+
+//   Constraints: 5 ≤ upSpeed ≤ 100.
+
+//   [input] integer downSpeed
+
+//   A positive integer representing the nightly decline.
+
+//   Constraints: 2 ≤ downSpeed < upSpeed.
+
+//   [input] integer desiredHeight
+
+//   A positive integer representing the threshold.
+
+//   Constraints: 4 ≤ desiredHeight ≤ 1000.
+
+//   [output] an integer
+
+//   The number of days that it will take for the plant to reach/pass desiredHeight (including the last day in the total count).
+
+ 
+  function growingPlant(upSpeed, downSpeed, desiredHeight) {
+    let plantSize = 0
+    let days = 0
+    while (plantSize <= desiredHeight){
+      days++
+      plantSize += upSpeed
+      if(plantSize >= desiredHeight){
+        return days
+      }
+      plantSize -= downSpeed
+    }
+    return days  
+  }
