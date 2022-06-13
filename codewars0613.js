@@ -62,3 +62,18 @@ function calc(x){
     return [...x].map((el,ind) => x.charCodeAt(ind)).join('').split('').filter(x=>x == 7).length * 6
     }
   
+    // Task
+
+    // Given an array/list [] of integers , Find the product of the k maximal numbers.
+    // Notes
+    
+    //     Array/list size is at least 3 .
+    
+    //     Array/list's numbers Will be mixture of positives , negatives and zeros
+    
+    //     Repetition of numbers in the array/list could occur.
+
+
+    function maxProduct(numbers, size){
+        return numbers.sort((a,b)=>b-a).reduce((ac,el,ind)=> ind < size ? ac * el : ac, 1)
+      }
