@@ -52,3 +52,14 @@ function pattern(n){
 function automorphic(n){
     return (n * n).toString().endsWith(n) ? 'Automorphic' : 'Not!!'
   }
+
+
+//   The vowel substrings in the word codewarriors are o,e,a,io. The longest of these has a length of 2. Given a lowercase string that has alphabetic characters only (both vowels and consonants) and no spaces, return the length of the longest vowel substring. Vowels are any of aeiou.
+
+// Good luck!
+
+function solve(s){
+    let vowels = "aeiou"
+    let lengthArr = [...s].map(x=> vowels.includes(x) ? x : "X").join('').split('X').map(x=> x.length)
+    return Math.max(...lengthArr)
+   }
