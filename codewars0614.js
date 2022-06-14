@@ -83,3 +83,18 @@ function hydrate(s) {
     let num = [...s].filter(x=>!isNaN(+x)).reduce((ac,el)=> ac + +el, 0) 
      return num + (num === 1 ? " glass of water" : " glasses of water")
   }
+
+//   Given a string made of digits [0-9], return a string where each digit is repeated a number of times equals to its value.
+// Examples
+
+// explode("312")
+
+// should return :
+
+// "333122"
+
+function explode(s) {
+    let answer = ""
+    s.split('').forEach(x=> answer += x.repeat(+x))
+    return answer
+  }
