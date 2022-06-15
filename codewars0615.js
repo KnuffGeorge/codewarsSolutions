@@ -9,3 +9,15 @@ function vowel2index(str) {
     let vowels = "AEIOUaeiou"
     return [...str].map((x,i)=> vowels.includes(x) ? x = i + 1 : x).join('')
   }
+
+//   This Kata is intended as a small challenge for my students
+
+// Create a function, called removeVowels (or remove_vowels), that takes a string argument and returns that same string with all vowels removed (vowels are "a", "e", "i", "o", "u").
+
+// removeVowels("drake") // => "drk"
+// removeVowels("aeiou") // => ""
+
+var removeVowels = function(str){
+    let vowels = "aeiou"
+    return [...str].filter(x=> !vowels.includes(x)).join('')
+    }
