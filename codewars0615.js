@@ -21,3 +21,10 @@ var removeVowels = function(str){
     let vowels = "aeiou"
     return [...str].filter(x=> !vowels.includes(x)).join('')
     }
+    // Your task in this kata is to implement a function that calculates the sum of the integers inside a string. For example, in the string "The30quick20brown10f0x1203jumps914ov3r1349the102l4zy dog", the sum of the integers is 3635.
+
+    // Note: only positive integers will be tested.
+    
+    function sumOfIntegersInString(s){
+        return s.split('').map(x=> !isNaN(+x) ? x : "X").join('').split('X').reduce((ac,el)=> ac + +el, 0)
+      }
