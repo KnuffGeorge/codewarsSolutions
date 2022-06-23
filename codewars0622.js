@@ -34,3 +34,11 @@ function dbSort(a){
     let letters = a.filter(x=> x === x.toString()).sort()
     return numbers.concat(letters)
     }
+
+    Description:
+
+// Count the number of exclamation marks and question marks, return the product.
+
+function product (string) {
+    return [...string].reduce((ac,el)=> el ==="?" ? ac + 1: ac,0) * [...string].reduce((ac,el)=> el ==="!" ? ac + 1: ac,0)
+  }
