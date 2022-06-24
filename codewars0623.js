@@ -66,3 +66,8 @@ function goodVsEvil(good, evil){
     function insertDash(num) {
         return num.toString().split('').map((x,i,arr)=> +x % 2 === 1 && +arr[i+1] % 2===1 ? x + "-" : x).join('')
      }
+
+    //  Implement a function that returns the minimal and the maximal value of a list (in this order).
+    function getMinMax(arr){
+        return [Math.min(...arr),Math.max(...arr)];
+      };    
