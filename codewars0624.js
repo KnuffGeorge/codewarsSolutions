@@ -33,3 +33,21 @@ function add(num1, num2) {
 function countChar(string, char) {
     return [...string.toLowerCase()].filter(x=> x == char.toLowerCase()).length
   }
+
+//   Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+
+// Your task is to process a string with "#" symbols.
+// Examples
+
+// "abc#d##c"      ==>  "ac"
+// "abc##d######"  ==>  ""
+// "#######"       ==>  ""
+// ""              ==>  ""
+
+function cleanString(s) {
+    let arr = s.split("")
+    let answer = []
+    arr.forEach((x,i)=> x == "#" ? answer.pop() : answer.push(x))
+    return answer.join('')
+   }
+
