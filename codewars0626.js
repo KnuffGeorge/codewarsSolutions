@@ -22,3 +22,20 @@ function bandNameGenerator(str) {
 function one(arr, fun){
     return arr.filter(x => fun(x)).length === 1;
   }
+
+//   Bob is a lazy man.
+
+//   He needs you to create a method that can determine how many letters (both uppercase and lowercase ASCII letters) and digits are in a given string.
+  
+//   Example:
+  
+//   "hel2!lo" --> 6
+  
+//   "wicked .. !" --> 6
+  
+//   "!?..A" --> 1
+
+function countLettersAndDigits(input) {
+    return [...input.toUpperCase()].filter(x=> x.charCodeAt() >= 65 && x.charCodeAt() <= 90 || x.charCodeAt() >= 48 && x.charCodeAt() <= 57).length;
+  }
+  
