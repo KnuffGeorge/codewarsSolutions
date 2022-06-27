@@ -38,4 +38,16 @@ function one(arr, fun){
 function countLettersAndDigits(input) {
     return [...input.toUpperCase()].filter(x=> x.charCodeAt() >= 65 && x.charCodeAt() <= 90 || x.charCodeAt() >= 48 && x.charCodeAt() <= 57).length;
   }
+
+//   Complete the solution so that the function will break up camel casing, using a space between words.
+// Example
+
+// "camelCasing"  =>  "camel Casing"
+// "identifier"   =>  "identifier"
+// ""             =>  ""
+
+function solution(string) {
+    return string.split('').map((x => x===x.toUpperCase()? " "+x: x)).join('');
+}
+
   
