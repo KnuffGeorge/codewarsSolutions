@@ -237,3 +237,6 @@ function highestRank(arr){
             let odd = [...str].reduce((ac,el)=> el % 2 === 1 ? ac + +el : ac, 0)
             return even > odd ? 'Even is greater than Odd' : even < odd ? 'Odd is greater than Even' : 'Even and Odd are the same'
               }
+            //   Your task is to add a new property usersAnswer to every object in the array questions. The value of usersAnswer should be set to null. The solution should work for array of any length. 
+
+            questions.forEach(x => x.usersAnswer = null);
