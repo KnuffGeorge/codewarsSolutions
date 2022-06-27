@@ -11,3 +11,14 @@
 function bandNameGenerator(str) {
     return str.slice(0,1) === str.slice(-1) ? str.slice(0,1).toUpperCase() + str.slice(1,-1) + str.toLowerCase() : "The " + str.slice(0,1).toUpperCase() + str.slice(1)
    }
+
+//    Create a function called one that accepts two params:
+
+//    a sequence
+//    a function
+
+// and returns true only if the function in the params returns true for exactly one (1) item in the sequence.
+
+function one(arr, fun){
+    return arr.filter(x => fun(x)).length === 1;
+  }
