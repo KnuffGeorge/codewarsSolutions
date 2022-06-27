@@ -109,5 +109,23 @@ function evenLast(numbers) {
     return (numbers.reduce((ac,el,ind)=> ind % 2 == 0 ? ac + el : ac,0) * numbers[numbers.length-1])
   }
 
+//   Your task, is to create NxN multiplication table, of size provided in parameter.
 
+//   for example, when given size is 3:
+  
+//   1 2 3
+//   2 4 6
+//   3 6 9
+
+multiplicationTable = function(size) {
+    let answer = []
+    let arr = []
+    for (let i = 1; i<=size; i++){
+        arr = []
+      for(let j = 1; j<=size; j++){
+        arr.push(j*i)
+      }answer.push(arr)
+    }return answer
+  }
+  
   
