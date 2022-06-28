@@ -25,3 +25,15 @@ function fireFight(s){
 function makeString(s){
     return s.split(' ').map( x => x.charAt(0) ).join('');
   }
+
+//   Complete the solution so that it takes the object (JavaScript/CoffeeScript) or hash (ruby) passed in and generates a human readable string from its key/value pairs.
+
+// The format should be "KEY = VALUE". Each key/value pair should be separated by a comma except for the last pair.
+
+function solution(pairs){
+    let str = ""
+    for (let i = 0; i < Object.keys(pairs).length; i++){
+      str += Object.keys(pairs)[i] + " = " + pairs[Object.keys(pairs)[i]] + ","
+    }return str.slice(0,-1)
+  }
+  
