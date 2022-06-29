@@ -66,3 +66,24 @@ function isLucky(n) {
     let sum = [...n.toString()].reduce((ac,el)=> ac + el, 0) 
     return sum === 0 || sum % 9 === 0
   } 
+
+//   In this Kata, you will be given an array of unique elements, and your task is to rearrange the values so that the first max value is followed by the first minimum, followed by second max value then second min value, etc.
+
+//   For example:
+  
+//   solve([15,11,10,7,12]) = [15,7,12,10,11]
+  
+//   The first max is 15 and the first min is 7. The second max is 12 and the second min is 10 and so on.
+
+function solve(arr){
+    let answer = []
+    let arr2 = []
+    arr.forEach(x=> arr2.push(x))
+    let min = arr.sort((a,b)=> a-b)
+    let max = arr2.sort((a,b)=> b-a)
+    for (let i = 0; i < arr.length/2; i++){
+      answer.push(max[i])
+      answer.push(min[i])
+    }
+    return answer.slice(0,arr.length)
+};
