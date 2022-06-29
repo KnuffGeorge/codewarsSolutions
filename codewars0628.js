@@ -102,3 +102,19 @@ function spoonerize(words) {
     let arr = words.split(' ');
     return  arr[1].slice(0, 1) + arr[0].slice(1) + ' ' +  arr[0].slice(0, 1) + arr[1].slice(1);
 }
+
+// Create a function that takes in the sum and age difference of two people, calculates their individual ages, and returns a pair of values (oldest age first) if those exist or null/None if:
+
+//     sum < 0
+//     difference < 0
+//     Either of the calculated ages come out to be negative
+
+function getAges(sum,difference){
+    let avg = sum/2
+    let old = avg + difference/2
+    let young = avg - difference/2
+    if (sum < 0 || difference < 0 || old < 0 || young < 0){
+      return null
+    }
+    return [old,young]
+  };
