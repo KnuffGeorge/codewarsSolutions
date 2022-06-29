@@ -42,4 +42,16 @@ function elevatorDistance(array) {
 const findAll = (array, n) => {
     return array.map((x,i)=> x==n ? i : null).filter(x=> x!=null)
   }
-  
+
+//   In your class, you have started lessons about arithmetic progression. Since you are also a programmer, you have decided to write a function that will return the first n elements of the sequence with the given common difference d and first element a. Note that the difference may be zero!
+
+//   The result should be a string of numbers, separated by comma and space.
+
+function arithmeticSequenceElements(a,r,n) {
+    let value = a
+    let answer = ""
+    for(let i = 1; i<=n; i++){
+      answer += value + ", "
+      value += r 
+    }return answer.slice(0,-2)
+  }
