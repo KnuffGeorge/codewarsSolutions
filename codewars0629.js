@@ -79,3 +79,35 @@
         if (totalPop == 0) return 0 
         return  (infectedPop / totalPop) * 100
       }
+
+    //   Task
+
+    //   Write a method, that replaces every nth char oldValue with char newValue.
+    //   Inputs
+      
+    //       text: the string to modify
+    //       n: change the target letter every nth occurrencies
+    //       old_value (or similar): the targetted character
+    //       new_value (or similar): the character to use as replacement
+      
+    //   Note for untyped languages: all inputs are always valid and of their expected type.
+    //   Rules
+      
+    //       Your method has to be case sensitive!
+    //       If n is 0 or negative or if it is larger than the count of the oldValue, return the original text without a change.
+
+    function replaceNth(text, n, oldValue, newValue) {
+        let letterCounter = 1
+        let answer = ""
+        for (let i = 0; i < text.length; i++){
+          if (text[i] == oldValue && letterCounter == n){
+            answer += newValue
+            letterCounter = 1
+          }else if (text[i] == oldValue && letterCounter < n){
+            answer += text[i]
+            letterCounter++
+          }else{
+            answer += text[i]
+          }
+        }return answer
+      }
