@@ -50,3 +50,32 @@
         }
         return obj;
       }   
+
+    //   ⚠️ The world is in quarantine! There is a new pandemia that struggles mankind. Each continent is isolated from each other but infected people have spread before the warning. ⚠️
+
+    //   🗺️ You would be given a map of the world in a type of string:
+      
+    //   string s = "01000000X000X011X0X"
+      
+    //   '0' : uninfected
+      
+    //   '1' : infected
+      
+    //   'X' : ocean
+      
+    //   ⚫ The virus can't spread in the other side of the ocean.
+      
+    //   ⚫ If one person is infected every person in this continent gets infected too.
+      
+    //   ⚫ Your task is to find the percentage of human population that got infected in the end.
+      
+    //   ☑️ Return the percentage % of the total population that got infected.
+      
+    //   ❗❗ The first and the last continent are not connected!
+
+    function infected(s) {
+        let totalPop = s.split('').filter(x=> x != "X").length
+        let infectedPop = s.split("X").map(x=>x.includes('1') ? x.length : null).reduce((ac,el)=> ac + +el)
+        if (totalPop == 0) return 0 
+        return  (infectedPop / totalPop) * 100
+      }
