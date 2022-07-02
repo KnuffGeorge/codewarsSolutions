@@ -22,3 +22,21 @@ function ArithmeticSequenceSum(a, r, n) {
 function freqSeq(str, sep) {  
     return (str.split('').map((x,i,arr) => arr.filter(el => el == x).length).join(sep))
   }
+
+//   Given a varying number of integer arguments, return the digits that are not present in any of them.
+
+//   Example:
+  
+//   [12, 34, 56, 78]  =>  "09"
+//   [2015, 8, 26]     =>  "3479"
+  
+//   Note: the digits in the resulting string should be sorted.
+
+function unusedDigits(nums) {
+    let str = Array.from(arguments).join('')
+    let answer = ""
+    for (let i = 0; i < 10; i++){
+      !str.includes(i) ? answer += i : null
+    }return answer
+  }
+  
