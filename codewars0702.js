@@ -37,3 +37,13 @@ function gordon(a){
     let vowels = "AEIOU"
     return a.split(' ').map(x=> x.toUpperCase() + '!!!!').join(' ').split('').map(x=> x== "A" ? "@" : vowels.includes(x) ? "*" : x).join("")
   }
+
+//   Your task is to remove all consecutive duplicate words from a string, leaving only first words entries. For example:
+
+//   "alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"
+  
+//   --> "alpha beta gamma delta alpha beta gamma delta"
+
+const removeConsecutiveDuplicates = s => s.split(' ').filter((el,ind,arr)=> el !== arr[ind-1]).join(' ') 
+  
+  
