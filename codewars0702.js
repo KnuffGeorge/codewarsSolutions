@@ -45,5 +45,13 @@ function gordon(a){
 //   --> "alpha beta gamma delta alpha beta gamma delta"
 
 const removeConsecutiveDuplicates = s => s.split(' ').filter((el,ind,arr)=> el !== arr[ind-1]).join(' ') 
+
+// The Stanton measure of an array is computed as follows: count the number of occurences for value 1 in the array. Let this count be n. The Stanton measure is the number of times that n appears in the array.
+
+// Write a function which takes an integer array and returns its Stanton measure.
   
+function stantonMeasure(arr){
+    let stanton = arr.filter(x=> x == 1).length
+    return arr.filter(x=> x == stanton).length
+  }
   
