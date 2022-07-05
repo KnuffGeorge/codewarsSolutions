@@ -56,3 +56,23 @@ function pattern(n){
     }
     return output.slice(0, -1);
   }
+
+//   Modify the kebabize function so that it converts a camel case string into a kebab case.
+
+// kebabize('camelsHaveThreeHumps') // camels-have-three-humps
+// kebabize('camelsHave3Humps') // camels-have-humps
+
+// Notes:
+
+//     the returned string should only contain lowercase letters
+
+
+  function kebabize(str) {
+    console.log(str)
+    let answer = isNaN(str[0]) ? str[0].toLowerCase() : ""
+    for (let i = 1; i < str.length; i++){
+      if(isNaN(str[i])){
+      answer += str[i] == str[i].toUpperCase() ? "-" + str[i].toLowerCase() : str[i]
+      }
+    }return answer.startsWith("-") ? answer.slice(1) : answer
+  }
