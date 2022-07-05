@@ -34,5 +34,25 @@ function fizzBuzzCuckooClock(time) {
     else if (minute % 3 === 0) return "Fizz"
     else if (minute % 5 === 0) return "Buzz"
     else return "tick"
-    
+  }
+
+//   Task
+
+//   Using n as a parameter in the function pattern, where n>0, complete the codes to get the pattern (take the help of examples):
+  
+//   Note: There is no newline in the end (after the pattern ends)
+//   Examples
+  
+//   pattern(3) should return "1\n1*2\n1**3", e.g. the following:
+  
+//   1
+//   1*2
+//   1**3
+
+function pattern(n){
+    let output = "1\n";
+    for (let i = 2; i <= n; i++){
+      output += "1" + "*".repeat(i - 1) + i + '\n'
+    }
+    return output.slice(0, -1);
   }
