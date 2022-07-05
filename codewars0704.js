@@ -76,3 +76,15 @@ function pattern(n){
       }
     }return answer.startsWith("-") ? answer.slice(1) : answer
   }
+
+//   Move every letter in the provided string forward 10 letters through the alphabet.
+
+//   If it goes past 'z', start again at 'a'.
+  
+//   Input will be a string with length > 0.
+
+function moveTen(s){
+    let codes = s.split('').map(x=> x.charCodeAt() + 10)
+    return codes.map(x=> x > 122 ? String.fromCharCode(x-26) : String.fromCharCode(x)).join('')
+    }
+  
