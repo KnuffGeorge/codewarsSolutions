@@ -96,3 +96,24 @@ function groupByCommas(n) {
     }
     return answer
     }
+
+    // Longest Palindrome
+
+    // Find the length of the longest substring in the given string s that is the same in reverse.
+    
+    // As an example, if the input was “I like racecars that go fast”, the substring (racecar) length would be 7.
+    
+    // If the length of the input string is 0, the return value must be 0. 
+
+    longestPalindrome=function(s){
+        let longestPalindrome = 0
+        for (let i = 0; i <= s.length; i++){
+          if(s.length - i > longestPalindrome){
+          for(let j = s.length; j >= i; j--){
+              if (s.slice(i,j) === s.slice(i,j).split("").reverse().join("") && s.slice(i,j).length > longestPalindrome){       
+                longestPalindrome = s.slice(i,j).length 
+              }
+            }
+          }
+        }return longestPalindrome
+      }   
