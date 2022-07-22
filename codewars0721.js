@@ -36,3 +36,17 @@ function variance(town, strng) {
 if (checkName(town,strng)) return -1
 return getRain(town,strng).map(x=> (x - mean(town,strng)) ** 2).reduce((ac,el)=> ac + el, 0)/12
 }
+
+// Should be easy, begin by looking at the code. Debug the code and the functions should work.
+
+// There are three functions: Multiplication (x) Addition (+) and Reverse (!esreveR)
+
+function multi(arr) {
+    return arr.reduce((ac,el)=> ac * el,1);
+  }
+  function add(arr) {
+    return arr.reduce((ac,el)=> ac + el,0);
+  }
+  function reverse(str) {
+    return [...str].reverse().join('');
+  }
