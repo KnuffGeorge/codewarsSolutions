@@ -16,3 +16,35 @@ function numberOfPairs(gloves)
   let colors = Array.from(new Set(gloves))
   return colors.map(x=> Math.floor(gloves.filter(y=>y==x).length / 2)).reduce((ac,el)=> ac + el)
 }
+// Return the century of the input year. The input will always be a 4 digit string, so there is no need for validation.
+// Examples
+
+// "1999" --> "20th"
+// "2011" --> "21st"
+// "2154" --> "22nd"
+// "2259" --> "23rd"
+// "1124" --> "12th"
+// "2000" --> "20th"
+
+function whatCentury(year)
+{
+  let centuryNumber = Math.floor(((Number(year) / 100)) + 1).toString() 
+  if (year.slice(-2) == "00") centuryNumber = (+centuryNumber - 1).toString()
+  let lastDigit = centuryNumber.slice(-1)
+  if (centuryNumber === "11" || centuryNumber === "12"  || centuryNumber === "13"){
+    return centuryNumber + "th"
+  }
+  switch(lastDigit){
+  case "1":
+    return centuryNumber + "st"
+  case "2":
+    return centuryNumber + "nd"
+  case "3":
+    return centuryNumber + "rd"
+  default: 
+    return centuryNumber + "th"
+}
+ }
+   
+
+
