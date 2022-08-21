@@ -11,6 +11,4 @@
 function balance(left,right){
     const weights = (str) => [...str].reduce((ac,el)=> el == "?" ? ac += 3 : ac +=2, 0)
     return weights(left) == weights(right) ? "Balance" : weights(left) > weights(right) ? "Left" : "Right"
-     
-     
    }
