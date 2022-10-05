@@ -1,22 +1,28 @@
-// Write a function that receives two strings and returns n, where n is equal to the number of characters we should shift the first string forward to match the second. The check should be case sensitive.
+// In this Kata, you will be given an array of strings and your task is to remove all consecutive duplicate letters from each string in the array.
 
-// For instance, take the strings "fatigue" and "tiguefa". In this case, the first string has been rotated 5 characters forward to produce the second string, so 5 would be returned.
-// If the second string isn't a valid rotation of the first string, the method returns -1.
-// Examples:
+// For example:
 
-// "coffee", "eecoff" => 2
-// "eecoff", "coffee" => 4
-// "moose", "Moose" => -1
-// "isn't", "'tisn" => 2
-// "Esham", "Esham" => 0
-// "dog", "god" => -1
+//     dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
 
-function shiftedDiff(first,second){
-    let rotations = 0 
-    while (first != second){
-      rotations++
-      first = first.slice(-1) + first.slice(0,-1)
-      if (rotations > first.length) return -1
-    }
-    return rotations
-  }
+//     dup(["kelless","keenness"]) = ["keles","kenes"].
+
+// Strings will be lowercase only, no spaces. See test cases for more examples.
+
+// Good luck!
+
+// If you like this Kata, please try:
+
+// Alternate capitalization
+
+// Vowel consonant lexicon
+
+
+function dup(s) {
+    return s.map(x=> {
+      let dupRemoved = ""
+      for (let i = 0; i <= x.length; i++){
+        if (x[i] != x[i+1]) dupRemoved += x[i]
+      }
+      return dupRemoved
+    })
+    };

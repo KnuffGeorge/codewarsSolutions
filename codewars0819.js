@@ -34,7 +34,7 @@ function bingo(ticket, win){
     let miniWins = 0 // initialse variable for count of mini wins
     let wordLengths = ticket.map(x=> x[0].length) // make array of string lengths on each ticket
       for (let i = 0; i < ticket.length; i++){ // loop through each ticket
-        for(let j = 0; j < wordLengths[i]; j++){ // loop through each string on each ticket using word lengths array
+        for(let j = 0; j < wordLengths[i]; j++){ // loop through each character of the string on the current ticket using word lengths array
           if (ticket[i][0][j].charCodeAt() === ticket[i][1]) miniWins++ // if any charCode matches the number, increment mini-wins
       }
     }
