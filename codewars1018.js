@@ -16,4 +16,4 @@ function copyList(l){
     let copy = []
     l.forEach(x => copy.push(x))
     return copy
-  }
+  }  
